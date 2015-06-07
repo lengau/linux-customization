@@ -4,11 +4,11 @@
 # Set this to run in the background when your desktop environment starts and 
 # Inbox can once again join the world of civilised Email apps.
 
-inbox_window_id=$(wmctrl -l|grep 'Inbox –'|cut -f 1 -d' ')
-
-while ! xwininfo -id $inbox_window_id; do
+while ! wmctrl -l|grep 'Inbox –'; do
 	sleep 0.2
 done
+
+inbox_window_id=$(wmctrl -l|grep 'Inbox –'|cut -f 1 -d' ')
 
 while true; do 
 	kdocker -w $inbox_window_id -i $HOME/.local/share/icons/hicolor/128x128/apps/chrome-pkclgpgponpjmpfokoepglboejdobkpl-Default.png
