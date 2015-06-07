@@ -9,7 +9,7 @@ while ! xwininfo -name 'Hangouts'; do
 	done
 
 while true; do 
-	kdocker -w $(xwininfo -name 'Hangouts'|grep 'Window id'|cut -d' ' -f 4) -i /home/lengau/.local/share/icons/hicolor/128x128/apps/chrome-knipolnnllmklapflnccelgolnpehhpl-Default.png
+	kdocker -w $(xwininfo -name 'Hangouts'|grep 'Window id'|cut -d' ' -f 4) -i $HOME/.local/share/icons/hicolor/128x128/apps/chrome-knipolnnllmklapflnccelgolnpehhpl-Default.png
 	
 	sleep 90
 done
