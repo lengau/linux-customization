@@ -4,12 +4,4 @@
 # Set this to run in the background when your desktop environment starts and 
 # Hangouts can once again join the world of civilised IM apps.
 
-while ! xwininfo -name 'Hangouts'; do
-		sleep 0.2
-	done
-
-while true; do 
-	kdocker -w $(xwininfo -name 'Hangouts'|grep 'Window id'|cut -d' ' -f 4) -i $HOME/.local/share/icons/hicolor/128x128/apps/chrome-knipolnnllmklapflnccelgolnpehhpl-Default.png
-	
-	sleep 90
-done
+kdocker -w $(wmctrl -l|grep 'Hangouts -'|cut -f 1 -d' ') -i $HOME/.local/share/icons/hicolor/128x128/apps/chrome-knipolnnllmklapflnccelgolnpehhpl-Default.png
